@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 1000
+int c;
+int k = 0;
+int plot[MAX];
+ 
+typedef struct Node{
+  int conteudo;
+  int priority;
+  struct Node *next;
+}Node;
+ 
+typedef struct PriorityQueue{
+  Node *first;
+}PriorityQueue;
+ 
+int isEmpty(PriorityQueue *pq){
+  return (pq->first == NULL);
+}
+PriorityQueue* createPriorityQueue(){
+  PriorityQueue *newP = (PriorityQueue*)malloc(sizeof(PriorityQueue));
+  newP->first = NULL;
+  return newP;
+}
+ 
+PriorityQueue* enqueue(PriorityQueue *pq, int i, int p){
+  Node *newNode = (Node*)malloc(sizeof(Node));
+  newNode->conteudo = i;
+  newNode->priority = p;
+  c = 1;
+  if(isEmpty(pq) || (p > pq->first->priority)) {
+    newNode->next = pq->first;
+    pq->first = newNode;
+  }
+  else{
+    Node* current = pq->first;
+    while(current->next != NULL && current->next->priority > p){
+      current = current->next;
+      c++;
+    }
+    newNode->next = current->next;
+    current->next = newNode;
+  }
+  plot[k] = c;
+  k++;
+  return pq;
+}
+ 
+void printPqueue(PriorityQueue *pq){
+  Node *q = pq->first;
+  while(q != NULL){
+    printf("%d ", q->conteudo);
+    q = q->next;
+  }
+  printf("\n");
+}
+ 
+int main(void){
+  PriorityQueue *pq = createPriorityQueue();
+  int i = 0;
+  int x, aux;
+  while(scanf("%d", &x)!= EOF)
+  {
+    enqueue(pq, x, x);  
+  }
+  int j, l;
+  for(j = 0; j < k; ++j)
+    {
+       for(l = j+1; l < k; l++)
+       {
+            if(plot[l] < plot[j])
+            {
+                aux = plot[l];
+                plot[l] = plot[j];
+                plot[j] = aux;
+            }
+       } 
+    }
+    printf("PriorityQueue <- c(" );
+    for(j = 0; j < k; j++)
+    {
+        printf("%d", plot[j]);
+        if(j < k-1)printf(", ");
+    }
+    printf(")");
+  return 0;
+}
