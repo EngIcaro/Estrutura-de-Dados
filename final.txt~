@@ -1,0 +1,12 @@
+Na Ciência da computação, uma estrutura de dados é um modo particular de armazenamento e organização de dados em um computador de modo que possam ser usados eficientemente, facilitando sua busca e modificação.[1][2]
+
+Diferentes tipos de estrutura de dados são adequadas a diferentes tipos de aplicação e algumas são altamente especializadas, destinando-se a algumas tarefas específicas. Por exemplo, as B-trees são particularmente indicadas para a implementação de bases de dados, enquanto que a implementação de compiladores geralmente requer o uso de tabela de dispersão para a busca de identificadores.
+
+Estruturas de dados e algoritmos são temas fundamentais da ciência da computação, sendo utilizados nas mais diversas áreas do conhecimento e com os mais diferentes propósitos de aplicação. Sabe-se que algoritmos manipulam dados. Quando estes dados estão organizados (dispostos) de forma coerente, caracterizam uma forma***\**, uma estrutura de dados. A organização e os métodos para manipular essa estrutura é que lhe conferem singularidade e diminuição do espaço ocupado pela memória RAM, além de tornar o código-fonte do programa mais enxuto e simplificado.
+
+As estruturas de dados são chamadas tipos de dados compostos que dividem-se em homogêneos (vetores e matrizes) e heterogêneos (registros):
+
+    As estruturas homogêneas são conjuntos de dados formados pelo mesmo tipo de dado primitivo.
+    As estruturas heterogêneas são conjuntos de dados formados por tipos de dados primitivos diferentes (campos do registro) em uma mesma estrutura.
+
+A escolha de uma estrutura de dados apropriada pode tornar um problema complicado em um de solução relativamente simples. O estudo das estruturas de dados está em constante desenvolvimento (assim como o de algoritmos), mas, apesar disso, existem certas estruturas clássicas que se comportam como padrões.*****\\\\\////

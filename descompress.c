@@ -68,7 +68,7 @@ void extract (Tree *root)
 	unsigned char positivo;
   	j = counter = 0;
     FILE *file, *output;
-    file = fopen("huffman.txt", "rb");
+    file = fopen("huffman.huff", "rb");
     fseek(file, 0, SEEK_END);
     file_size = ftell(file);
     rewind(file);
@@ -127,7 +127,7 @@ void descomprimir()
 {
     int i;
     FILE *file;
-    file = fopen("huffman.txt", "rb");
+    file = fopen("huffman.huff", "rb");
     unsigned char first_byte, second_byte;
     first_byte = fgetc(file);
     trash = 0;

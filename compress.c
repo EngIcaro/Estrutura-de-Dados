@@ -46,7 +46,7 @@ void pre_order(Node *atual)
 void creat_Header(Node *root)
 {
     int i=0;
-    output =  output = fopen("huffman.txt", "wb");
+    output =  output = fopen("huffman.huff", "wb");
     pre_order (root);
     fputc('0', output);
     fputc('0', output);
