@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 1001
+ 
+int main(){
+    int heap[MAX];
+    int plot[MAX];
+    int i, x, c;
+    int k = 0;
+    int aux;
+    for(i = 1; scanf("%d", &x) != EOF; i++)
+    {
+        c=1;
+        heap[i] = x;
+        int id = i;
+        while(id != 1 && heap[id/2] < heap[id]){
+            aux = heap[id];
+            heap[id] = heap[id/2];
+            heap[id/2] = aux;
+            id/=2;
+            c++;  
+        }
+        plot[k] = c;
+        k++;
+    }
+    int j, l;
+    for(j = 0; j < i-1; ++j)
+    {
+       for(l = j+1; l < i-1; l++)
+       {
+            if(plot[l] < plot[j])
+            {
+                aux = plot[l];
+                plot[l] = plot[j];
+                plot[j] = aux;
+            }
+       } 
+    }
+    printf("Heap <- c(" );
+    for(j = 0; j < i-1; j++)
+    {
+        printf("%d", plot[j]);
+        if(j < i - 2)printf(", ");
+    }
+    printf(")");
+}
